@@ -1,0 +1,24 @@
+{
+  "name": "delicious_recipes_app",
+  "version": "1.0.0",
+  "description": "App for searching recipes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krollukasz/Delicious_recipes_app.git"
+  },
+  "author": "Lukasz Krol",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krollukasz/Delicious_recipes_app/issues"
+  },
+  "homepage": "https://github.com/krollukasz/Delicious_recipes_app#readme",
+  "devDependencies": {
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
