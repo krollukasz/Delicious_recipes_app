@@ -4,6 +4,10 @@
   "description": "App for searching recipes",
   "main": "index.js",
   "scripts": {
+    "init-project": "npm install && npm-run-all init:*",
+    "init:dirs": "mkdirp src/sass src/css src/images src/js",
+    "init:files": "touch README.md src/index.html src/sass/style.scss src/js/index.js",
+    "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development --open"
@@ -19,9 +23,18 @@
   },
   "homepage": "https://github.com/krollukasz/Delicious_recipes_app#readme",
   "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "babel-loader": "^8.0.6",
     "html-webpack-plugin": "^3.2.0",
+    "mkdirp": "^1.0.3",
+    "rimraf": "^3.0.2",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "core-js": "^3.6.4",
+    "regenerator-runtime": "^0.13.3"
   }
 }
