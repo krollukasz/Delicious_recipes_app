@@ -1,8 +1,8 @@
 const path = require("path");
-const HtmlWebpackPlugiin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./src/js/index.js",
+  entry: ["./src/js/index.js", "./src/sass/style.scss"],
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "js/index.js"
@@ -11,7 +11,7 @@ module.exports = {
     contentBase: "./dist"
   },
   plugins: [
-    new HtmlWebpackPlugiin({
+    new HtmlWebpackPlugin({
       filename: "index.html",
       template: "./src/index.html"
     })
@@ -24,7 +24,16 @@ module.exports = {
         use: {
           loader: "babel-loader"
         }
-      }
-    ]
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // Translates CSS into CommonJS
+          "css-loader",
+          // Compiles Sass to CSS
+          "sass-loader",
+        ],
+      },
+    ],
   }
 };
