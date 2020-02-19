@@ -1,0 +1,73 @@
+.shopping {
+  padding: 3rem 4rem;
+  display: flex;
+  flex-direction: column;
+
+  &__list {
+    max-height: 77rem;
+    list-style: none;
+    overflow: scroll;
+  }
+
+  &__item {
+    padding: 1.3rem 0;
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid #F2EFEE;
+    position: relative;
+
+    &:hover .shopping__delete {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &__count {
+    margin-right: 2rem;
+    padding: .4rem .5rem;
+    border: 1px solid #F2EFEE;
+    border-radius: 3px;
+    display: flex;
+    flex: 0 0 7.5rem;
+    justify-content: space-between;
+    cursor: pointer;
+
+    input {
+      width: 3.7rem;
+      font-family: inherit;
+      font-size: 1.2rem;
+      color: inherit;
+      border: none;
+      border-radius: 3px;
+      text-align: center;
+
+      &:focus {
+        background-color: #F2EFEE;
+        outline: none;
+      }
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__description {
+    margin-top: .4rem;
+    margin-right: 1.5rem;
+    font-size: 1.3rem;
+    flex: 1;
+  }
+
+  &__delete {
+    margin-top: .5rem;
+    padding-left: 2rem;
+    width: 3.75rem;
+    background-image: linear-gradient(to right, transparent 0%, #fff 40%, #fff 100%);
+    position: absolute;
+    right: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s;
+  } 
+}
