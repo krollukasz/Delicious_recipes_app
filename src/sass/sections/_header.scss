@@ -12,37 +12,6 @@
   display: block;
 }
 
-.search {
-  padding-left: 3rem;
-  display: flex;
-  align-items: center;
-  background-color: #ffffff;
-  border-radius: 10rem;
-  transition: all .3s;
-
-  &:focus-within {
-    box-shadow: 0 0.7rem 3rem rgba(101, 90, 86, 0.08);
-    transform: translateY(-2px);
-  }
-
-  &__field {
-    width: 30rem;
-    background: none;
-    color: inherit;
-    font-family: inherit;
-    font-size: 1.7rem;
-    border: none;
-
-    &:focus {
-      outline: none;
-    }
-
-    &::placeholder {
-      color: #DAD0CC;
-    }
-  }
-}
-
 .likes {
   padding: 0 !important;
   position: relative;
