@@ -69,5 +69,15 @@
     visibility: hidden;
     opacity: 0;
     transition: all .5s;
-  } 
+  }
+
+  .heading-2 {
+    margin-bottom: 2.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #15801e;
+    text-align: center;
+    text-transform: uppercase;
+    transform: skewY(-3deg);
+  }
 }
