@@ -1,0 +1,20 @@
+.loader {
+  margin: 5rem auto;
+  text-align: center;
+}
+
+.loader .fa-redo {
+  width: 5.5rem;
+  height: 5.5rem;
+  color: #119222;
+  transform-origin: 44% 50%;
+  animation: rotate 1.5s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg);
+  }
+}
