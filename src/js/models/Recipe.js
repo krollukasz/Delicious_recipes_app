@@ -29,4 +29,62 @@ export default class Recipe {
   calcServings() {
     this.servings = 4;
   };
+
+  parseIngredients() {
+    const unitsLong = ["tablespoons", "tablespoon", "ounces", "ounce", "teaspoons", "teaspoon", "cups", "pounds"];
+    const unitsShort = ["tbsp", "tbsp", "oz", "oz", "tsp", "tsp", "cup", "pound"];
+
+    const newIngredients = this.ingredients.map(el => {
+      // 1) Uniform units
+      let ingredient = el.toLowerCase();
+      unitsLong.forEach((unit, i) => {
+        ingredient = ingredient.replace(unit, unitsShort[i]);
+      });
+
+      // 2) Remove parentheses
+      ingredient = ingredient.replace(/ *\([^)]*\) */g, " ");
+
+      // 3) Parse ingredients into count, unit and ingredient
+      const arrayIngredient = ingredient.split(" ");
+      const unitIndex = arrayIngredient.findIndex(element => unitsShort.includes(element));
+
+      let objIngredient;
+      if (unitIndex > -1) {
+        // There is a unit
+        // Ex. 4 1/2 cups, arrCount is [4, 1/2]
+        // Ex. 4 cups, arrCount is [4]
+        const arrCount = arrayIngredient.slice(0, unitIndex);
+
+        let count;
+        if (arrCount === 1) {
+          count = eval(arrayIngredient[0].replace("-", "+"));
+        } else {
+          count = eval(arrayIngredient.slice(0, unitIndex).join("+"));
+        }
+
+        objIngredient = {
+          count, 
+          unit: arrayIngredient[unitIndex],
+          ingredient: arrayIngredient.slice(unitIndex + 1).join(" ")
+        };
+      } else if (parseInt(arrayIngredient[0], 10)) {
+        // There is no unit, but 1st element is a number
+        objIngredient = {
+          count: parseInt(arrayIngredient[0], 10),
+          unit: "",
+          ingredient: arrayIngredient.slice(1).join(" ")
+        };
+      } else if (unitIndex === -1) {
+        // There is no unit and no number in 1st position
+        objIngredient = {
+          count: 1,
+          unit: "",
+          ingredient
+        };
+      };
+
+      return objIngredient;
+    });
+    this.ingredients = newIngredients;
+  };
 };
