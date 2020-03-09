@@ -60,16 +60,13 @@ export const renderRecipe = recipe => {
         </svg>
         <span class="recipe__info--data recipe__info--data--people">${recipe.servings}</span>
         <span class="recipe__info-text"> servings</span>
+        
         <div class="recipe__info--buttons">
-          <button class="btn-tiny">
-            <svg>
-              <use href="../src/images/icons.svg#icon-circle-with-minus"></use>
-            </svg>
+          <button class="btn-tiny btn-decrease">
+            <i class="fas fa-minus"></i>
           </button>
-          <button class="btn-tiny">
-            <svg>
-              <use href="../src/images/icons.svg#icon-circle-with-plus"></use>
-            </svg>
+          <button class="btn-tiny btn-increase">
+            <i class="fas fa-plus"></i>
           </button>
         </div>
       </div>
@@ -105,4 +102,15 @@ export const renderRecipe = recipe => {
     </div>
   `;
   elements.recipe.insertAdjacentHTML("afterbegin", markup);
+};
+
+export const servingsIngredientsUpdate = recipe => {
+  // Update servings
+  document.querySelector(".recipe__info--data--people").textContent = recipe.servings;
+
+  // Update ingredients
+  const countElements = Array.from(document.querySelectorAll(".recipe__count"));
+  countElements.forEach((el, i) => {
+    el.textContent = formatCount(recipe.ingredients[i].count);
+  });
 };
