@@ -1,3 +1,4 @@
+import List from "./models/List";
 import Search from "./models/Search";
 import Recipe from "./models/Recipe";
 import * as recipeView from "./views/recipeView";
