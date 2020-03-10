@@ -37,7 +37,7 @@ const createIngredient = ingredient => `
   </li>
 `;
 
-export const renderRecipe = recipe => {
+export const renderRecipe = (recipe, isLiked) => {
   const markup = `
     <figure class="recipe__fig">
       <img src="${recipe.image}" alt="${recipe.title}" class="recipe__img">
@@ -71,7 +71,7 @@ export const renderRecipe = recipe => {
         </div>
       </div>
       <button class="recipe__love header__likes">          
-        <i class="far fa-heart recipe__love--recipe"></i>
+        <i class="${isLiked ? "fas" : "far"} fa-heart recipe__love--recipe"></i>
       </button>
     </div>
 
