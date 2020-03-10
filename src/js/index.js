@@ -70,7 +70,6 @@ elements.searchResultsPages.addEventListener("click", e => {
 const controlRecipe = async () => {
   // Get ID from url
   const id = window.location.hash.replace("#", "");
-  console.log(id);
 
   if (id) {
     // Prepare UI for changes

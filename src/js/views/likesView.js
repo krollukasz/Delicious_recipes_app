@@ -4,8 +4,6 @@ import { limitRecipeTitle } from "./searchView";
 export const toggleLikeBtn = isLiked => {
   const iconString = isLiked ? "fas" : "far";
   document.querySelector(".recipe__love i").setAttribute("class", `${iconString} fa-heart recipe__love--recipe`);
-  // <i class="fas fa-heart"></i>
-  // <i class="far fa-heart recipe__love--recipe"></i>
 };
 
 export const toggleLikeMenu = numLikes => {
