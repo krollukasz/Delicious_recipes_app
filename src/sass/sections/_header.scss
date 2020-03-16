@@ -33,7 +33,11 @@
   &__icon {
     width: 3.75rem;
     height: 3.75rem;
-    fill: rgb(131, 245, 179);
+    color: #f03d3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
   }
 
   &__panel {
