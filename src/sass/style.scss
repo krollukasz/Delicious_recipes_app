@@ -2,6 +2,7 @@
 @import "components/loader";
 @import "components/search";
 @import "sections/header";
+@import "sections/footer";
 @import "sections/recipe";
 @import "sections/results";
 @import "sections/shopping";
@@ -35,6 +36,7 @@ body {
 
 .container {
   margin: 4vw auto;
+  padding-bottom: 3rem;
   max-width: 120rem;
   background-color: #ffffff;
   display: grid;
