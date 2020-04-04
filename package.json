@@ -1,4 +1,5 @@
 {
+  "homepage": "http://krollukasz.github.io/Delicious_recipes_app",
   "name": "delicious_recipes_app",
   "version": "1.0.0",
   "description": "App for searching recipes",
@@ -8,6 +9,8 @@
     "init:dirs": "mkdirp src/sass src/css src/images src/js",
     "init:files": "touch README.md src/index.html src/sass/style.scss src/js/index.js",
     "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "webpack-dev-server --config webpack.config.js --open",
     "build": "webpack --config webpack.config.js"
   },
@@ -20,7 +23,6 @@
   "bugs": {
     "url": "https://github.com/krollukasz/Delicious_recipes_app/issues"
   },
-  "homepage": "https://github.com/krollukasz/Delicious_recipes_app#readme",
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
@@ -28,6 +30,7 @@
     "babel-loader": "^8.0.6",
     "css-loader": "^3.4.2",
     "file-loader": "^5.0.2",
+    "gh-pages": "^2.2.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.9.0",
